@@ -1,6 +1,6 @@
 # Workflow repo for the CA
 
-OVERVIEW
+#OVERVIEW
 
 This project is a frontend client for the Holidaze booking API.
 The application allows users to:
@@ -29,7 +29,7 @@ Environment handling (.env / .env.example)
 
 Organized test directory structure
 
-FOLDER STRUCTURE
+#FOLDER STRUCTURE
 workflow-repo-ca/
 │
 ├── css/
@@ -55,12 +55,12 @@ workflow-repo-ca/
 ├── .env.example
 └── .gitignore
 
-INSTALLATION
+#INSTALLATION
 Install dependencies:
 
 npm install
 
-📦 Environment Variables
+#ENVIRONMENT VARIABLES
 
 Playwright tests read environment variables from .env.
 
@@ -73,7 +73,7 @@ LOGIN_PASSWORD=
 
 Fill in your actual login email and password.
 
-CODE QUALITY (ESLint, Prettier, Husky)
+#CODE QUALITY (ESLint, Prettier, Husky)
 
 The repository is configured so that every commit automatically formats and lints code before being accepted.
 
@@ -114,7 +114,7 @@ include: ['tests/unit/**/*.test.js'],
 Run unit tests:
 npm test
 
-END TO END TESTING (Playwright)
+#END TO END TESTING (Playwright)
 
 All E2E tests live in:
 
@@ -136,7 +136,7 @@ npm run test:e2e
 With UI mode:
 npm run test:e2e:ui
 
-LOCAL DEVELOPMENT
+#LOCAL DEVELOPMENT
 
 The project can be viewed locally using Live Server or any static file server.
 
@@ -144,7 +144,7 @@ Example local root:
 
 http://127.0.0.1:5500/workflow-repo-ca/
 
-FEATURESE COVERED BY TESTS
+#FEATURES COVERED BY TESTS
 Unit Tests
 isActivePath()
 
@@ -179,7 +179,7 @@ opens first venue
 
 verifies the details page contains “Venue details”
 
-SCRIPTS
+#SCRIPTS
 "scripts": {
 "test": "vitest",
 "test:e2e": "playwright test",
@@ -188,7 +188,7 @@ SCRIPTS
 "test:e2e:debug": "PWDEBUG=1 playwright test"
 }
 
-CA REQUIREMENTS CHECKLIST
+#CA REQUIREMENTS CHECKLIST
 
 ESLint configured
 
@@ -214,7 +214,7 @@ Updated README
 
 PR ready for submission
 
-AUTHOR
+#AUTHOR
 
 Krzysztof Bytniewski
 Frontend Developer – Noroff Student
