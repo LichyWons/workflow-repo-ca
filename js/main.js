@@ -12,14 +12,16 @@ function initializeApp() {
   const path = window.location.pathname;
   console.log(path);
 
-  if (path === '/' || path === '/index.html') {
-    displayVenueList();
-  } else if (path.startsWith('/login')) {
+  // Use includes so pages work when the project is served from a subfolder
+  if (path.includes('/login')) {
     loginFormListener();
-  } else if (path.startsWith('/register')) {
+  } else if (path.includes('/register')) {
     registerFormListener();
-  } else if (path.startsWith('/venue/')) {
+  } else if (path.includes('/venue/')) {
     displayVenue();
+  } else {
+    // Default to venue list on any other page (including root)
+    displayVenueList();
   }
 }
 

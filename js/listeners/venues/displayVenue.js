@@ -4,12 +4,14 @@ import { updateMainHeading } from '../../ui/common/updateMainHeading.js';
 import { updateTitle } from '../../ui/common/updateTitle.js';
 import { renderVenue } from '../../ui/venues/renderVenue.js';
 import { getQueryParam } from '../../utils/getQueryParam.js';
+import { CONFIG } from '../../config.js';
 
 export async function displayVenue() {
   const id = getQueryParam('id');
 
   if (!id) {
-    window.location.href = '/';
+    const redirect = `${CONFIG.basePath || ''}/index.html`.replace(/\/+/g, '/');
+    window.location.href = redirect;
   }
   const container = document.querySelector('#venue-container');
 

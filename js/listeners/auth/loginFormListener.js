@@ -2,6 +2,7 @@ import { login } from '../../api/auth/login.js';
 import { displayMessage } from '../../ui/common/displayMessage.js';
 import { saveToken, saveUser } from '../../utils/storage.js';
 import { validateLoginForm } from '../../utils/validation.js';
+import { CONFIG } from '../../config.js';
 
 async function handleLoginSubmit(event) {
   event.preventDefault();
@@ -33,7 +34,12 @@ async function handleLoginSubmit(event) {
     const { accessToken, ...user } = await login(profile);
     saveToken(accessToken);
     saveUser(user);
-    window.location.href = '/';
+    // Redirect to project index respecting configured basePath
+    const redirectTarget = `${CONFIG.basePath || ''}/index.html`.replace(
+      /\/+/g,
+      '/',
+    );
+    window.location.href = redirectTarget;
   } catch (error) {
     displayMessage(messageContainer, 'error', error.message);
   } finally {
